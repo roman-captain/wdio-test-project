@@ -14,21 +14,13 @@ Automation test suite for [github.com](https://github.com) - AQA internship prac
 
 ## Project Structure
 
-wbd-tests-new/
-├── config/
-│   └── env.js          # BASE_URL, TIMEOUT, HEADLESS, credentials
-├── fixtures/
-│   └── testData.js     # test data (signIn from env, signUp/search hardcoded)
-├── helpers/            # utility functions
-├── pages/
-│   ├── base.page.js
-│   ├── login.page.js
-│   ├── signup.page.js
-│   └── main.page.js
-├── tests/
-│   └── github.spec.js  # E2E tests (@smoke / @regression)
-├── .env                # local env vars, not committed
-└── wdio.conf.js
+- `config/env.js` - BASE_URL, TIMEOUT, HEADLESS, credentials
+- `fixtures/testData.js` - test data
+- `helpers/` - utility functions
+- `pages/` - Page Object classes (base, login, signup, main)
+- `tests/github.spec.js` - E2E tests (@smoke / @regression)
+- `wdio.conf.js` - WebdriverIO config
+- `.env` - local env vars, not committed
 
 ## Setup
 

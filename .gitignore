@@ -1,4 +1,5 @@
 node_modules/
+CHANGES.md
 allure-results/
 allure-report/
 test-results/
