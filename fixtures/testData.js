@@ -26,7 +26,6 @@ export const testData = {
         pricingHeader:     'Try the Copilot-powered platform',
         pricingPageTitle:  'Pricing · Plans for every developer · GitHub',
         compareFeaturesH:  'Compare features',
-        supportTitle:      'Приветствуем вас в службе поддержки GitHub',
         termsUrl:          'site-policy/github-terms/github-terms-of-service',
     },
 }

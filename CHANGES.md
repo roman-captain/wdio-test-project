@@ -49,6 +49,9 @@
 #### `fixtures/testData.js`
 - `termsUrl` - changed from full locale-specific URL to locale-neutral path `site-policy/github-terms/github-terms-of-service`
 
+#### `pages/main.page.js` + `fixtures/testData.js`
+- Removed unused `supportTitle` locator and test data value - no longer referenced after switching to URL assertion
+
 #### `wdio.conf.js`
 - Chrome args - added `--no-sandbox` and `--disable-dev-shm-usage` (required for Linux CI)
 - Chrome args - added `--window-size=1920,1080` - headless default viewport is too small, GitHub renders mobile layout with hidden nav elements

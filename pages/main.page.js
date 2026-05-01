@@ -93,7 +93,6 @@ class MainPage extends BasePage {
 
     get serviceTermsButton() { return $('a[href*="/site/terms"]') }
     get supportLink()        { return $('a[href="https://support.github.com/"]') }
-    get supportTitle()       { return $('h2[class*="Heading-module__Heading"]') }
 
     // Support / Terms actions 
 
