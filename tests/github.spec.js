@@ -102,7 +102,7 @@ describe('Navigation on GitHub.com', () => {
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[handles.length - 1])
 
-        await expect(browser).toHaveUrl(testData.expectedTexts.termsUrl)
+        await expect(browser).toHaveUrl(testData.expectedTexts.termsUrl, { containing: true })
 
         await MainPage.scrollToSupportLink()
         await MainPage.clickSupportLink()

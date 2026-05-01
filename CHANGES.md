@@ -3,7 +3,7 @@
 ## Fix: resolve failing tests - cookie banner and locator updates
 
 **Date:** 2026-05-01
-**Status:** 6/6 tests passing
+**Status:** 6/6 tests passing (local + CI)
 
 ---
 
@@ -43,3 +43,11 @@
 
 #### `tests/github.spec.js`
 - `should find support` test - added `await SignupPage.clickSignUpNavButton()` before `clickServiceTerms()` to navigate to signup page where the Terms link is located
+- `toHaveUrl` check - changed to `{ containing: true }` with locale-neutral path; CI (Linux) opens `/en/`, local Mac opens `/ru/`
+
+#### `fixtures/testData.js`
+- `termsUrl` - changed from full locale-specific URL to locale-neutral path `site-policy/github-terms/github-terms-of-service`
+
+#### `wdio.conf.js`
+- Chrome args - added `--no-sandbox` and `--disable-dev-shm-usage` (required for Linux CI)
+- Chrome args - added `--window-size=1920,1080` - headless default viewport is too small, GitHub renders mobile layout with hidden nav elements

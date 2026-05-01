@@ -27,6 +27,6 @@ export const testData = {
         pricingPageTitle:  'Pricing · Plans for every developer · GitHub',
         compareFeaturesH:  'Compare features',
         supportTitle:      'Приветствуем вас в службе поддержки GitHub',
-        termsUrl:          'https://docs.github.com/ru/site-policy/github-terms/github-terms-of-service',
+        termsUrl:          'site-policy/github-terms/github-terms-of-service',
     },
 }
