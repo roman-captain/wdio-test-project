@@ -36,6 +36,7 @@ class SignupPage extends BasePage {
     }
 
     async chooseCountry(name) {
+        await this.dismissCookieBanner()
         await this.countryDropdown.waitForClickable({ timeout: 10000 })
         await this.countryDropdown.click()
         const option = await $(`span=${name}`)

@@ -90,6 +90,8 @@ describe('Navigation on GitHub.com', () => {
     it('should find support on github.com @regression', async () => {
         await browser.url('/')
 
+        await SignupPage.clickSignUpNavButton()
+
         await MainPage.clickServiceTerms()
 
         await browser.waitUntil(

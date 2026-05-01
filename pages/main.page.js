@@ -10,7 +10,7 @@ class MainPage extends BasePage {
     get countrySelect()      { return $('#form-field-country') }
     get privacyCheckbox()    { return $('[viewBox="0 0 100 100"]') }
     get successTitle()       { return $('#hero-section-brand-heading') }
-    get finalSubscribeBtn()  { return $('button[type="submit"]') }
+    get finalSubscribeBtn()  { return $('[data-analytics-event*="form_submit"]') }
 
     // Subscribe actions
 
@@ -35,12 +35,15 @@ class MainPage extends BasePage {
     }
 
     async clickPrivacyCheckbox() {
+        await this.dismissCookieBanner()
         await this.privacyCheckbox.waitForClickable({ timeout: 10000 })
         await this.privacyCheckbox.click()
     }
 
     async clickFinalSubscribeBtn() {
-        await this.finalSubscribeBtn.waitForClickable({ timeout: 10000 })
+        await this.dismissCookieBanner()
+        await this.finalSubscribeBtn.waitForExist({ timeout: 10000 })
+        await this.finalSubscribeBtn.scrollIntoView()
         await this.finalSubscribeBtn.click()
     }
 
@@ -88,13 +91,16 @@ class MainPage extends BasePage {
 
     // Support / Terms locators
 
-    get serviceTermsButton() { return $('a[href="/site/terms"]') }
+    get serviceTermsButton() { return $('a[href*="/site/terms"]') }
     get supportLink()        { return $('a[href="https://support.github.com/"]') }
     get supportTitle()       { return $('h2[class*="Heading-module__Heading"]') }
 
     // Support / Terms actions 
 
     async clickServiceTerms() {
+        await this.serviceTermsButton.waitForExist({ timeout: 10000 })
+        await this.serviceTermsButton.scrollIntoView()
+        await this.dismissCookieBanner()
         await this.serviceTermsButton.waitForClickable({ timeout: 10000 })
         await this.serviceTermsButton.click()
     }

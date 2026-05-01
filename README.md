@@ -1,4 +1,4 @@
-# wbd-tests-new
+# wdio-test-project
 
 Automation test suite for [github.com](https://github.com) - AQA internship practice project.
 
