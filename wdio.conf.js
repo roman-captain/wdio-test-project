@@ -11,7 +11,12 @@ export const config = {
     capabilities: [{
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: env.headless ? ['--headless', '--disable-gpu'] : [],
+            args: [
+                '--no-sandbox',
+                '--disable-dev-shm-usage',
+                '--window-size=1920,1080',
+                ...(env.headless ? ['--headless', '--disable-gpu'] : []),
+            ],
         },
     }],
 
