@@ -43,7 +43,8 @@
 
 #### `tests/github.spec.js`
 - `should find support` test - added `await SignupPage.clickSignUpNavButton()` before `clickServiceTerms()` to navigate to signup page where the Terms link is located
-- `toHaveUrl` check - changed to `{ containing: true }` with locale-neutral path; CI (Linux) opens `/en/`, local Mac opens `/ru/`
+- `toHaveUrl` check for Terms page - changed to `{ containing: true }` with locale-neutral path; CI (Linux) opens `/en/`, local Mac opens `/ru/`
+- Support page assertion - replaced `toHaveText(supportTitle)` with `toHaveUrl('support.github.com', { containing: true })`; page title is locale-dependent (Russian locally, English in CI)
 
 #### `fixtures/testData.js`
 - `termsUrl` - changed from full locale-specific URL to locale-neutral path `site-policy/github-terms/github-terms-of-service`

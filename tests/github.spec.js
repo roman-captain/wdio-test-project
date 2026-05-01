@@ -107,7 +107,6 @@ describe('Navigation on GitHub.com', () => {
         await MainPage.scrollToSupportLink()
         await MainPage.clickSupportLink()
 
-        await MainPage.supportTitle.waitForDisplayed({ timeout: 10000 })
-        await expect(MainPage.supportTitle).toHaveText(testData.expectedTexts.supportTitle)
+        await expect(browser).toHaveUrl('support.github.com', { containing: true })
     })
 })
