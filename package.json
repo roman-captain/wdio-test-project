@@ -17,6 +17,7 @@
     "test:regression": "wdio run ./wdio.conf.js --grep @regression",
     "report:generate": "allure generate allure-results --clean -o allure-report",
     "report": "allure generate allure-results --clean -o allure-report && allure open allure-report",
-    "test:browserstack": "wdio run ./browserstack.conf.js --grep @smoke"
+    "test:mobile": "wdio run ./wdio.mobile.local.conf.js",
+    "test:browserstack": "wdio run ./browserstack.conf.js --grep @mobile"
   }
 }
