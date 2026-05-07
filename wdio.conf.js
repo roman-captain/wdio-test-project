@@ -3,7 +3,7 @@ import { env } from './config/env.js'
 export const config = {
     runner: 'local',
 
-    specs: ['./tests/**/*.spec.js'],
+    specs: ['./tests/desktop/**/*.spec.js'],
     exclude: [],
 
     maxInstances: 1,
