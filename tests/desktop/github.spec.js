@@ -1,7 +1,7 @@
-import SignupPage  from '../pages/signup.page.js'
-import LoginPage   from '../pages/login.page.js'
-import MainPage    from '../pages/main.page.js'
-import { testData } from '../fixtures/testData.js'
+import SignupPage  from '../../pages/desktop/signup.page.js'
+import LoginPage   from '../../pages/desktop/login.page.js'
+import MainPage    from '../../pages/desktop/main.page.js'
+import { testData } from '../../fixtures/testData.js'
 
 describe('Navigation on GitHub.com', () => {
 
