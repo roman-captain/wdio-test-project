@@ -31,23 +31,31 @@ class SignupMobilePage extends BaseMobilePage {
     async fillUsername(value) {
         await this.usernameField.waitForDisplayed({ timeout: 10000 })
         await this.usernameField.setValue(value)
+        await browser.execute(() => document.activeElement.blur())
+        await browser.pause(500)
     }
 
     async chooseCountry(name) {
+        await browser.execute(() => document.activeElement.blur())
+        await browser.pause(1000)
         await this.dismissCookieBanner()
         await this.countryDropdown.waitForDisplayed({ timeout: 10000 })
         await this.countryDropdown.scrollIntoView()
         await this.countryDropdown.waitForClickable({ timeout: 10000 })
         await this.countryDropdown.click()
-        await browser.pause(500)
         await this.countryFilter.waitForDisplayed({ timeout: 10000 })
         await this.countryFilter.setValue(name)
-        const option = await $(`span.ActionListItem-label=${name}`)
+        const option = $('button[data-value="UA"]')
         await option.waitForDisplayed({ timeout: 10000 })
         await option.click()
+        if (await this.countryFilter.isDisplayed()) {
+            await $('[data-close-dialog-id="country-dropdown-panel-dialog"]').click()
+        }
     }
 
     async clickEmailCheckbox() {
+        await this.dismissCookieBanner()
+        await this.emailCheckbox.scrollIntoView()
         await this.emailCheckbox.waitForClickable({ timeout: 10000 })
         await this.emailCheckbox.click()
     }

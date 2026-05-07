@@ -5,9 +5,16 @@ export default class BaseMobilePage {
 
     async dismissCookieBanner() {
         await browser.execute(() => {
-            const banner = document.getElementById('wcpConsentBannerCtrl')
-            if (banner) banner.remove()
+            const msBanner = document.getElementById('wcpConsentBannerCtrl')
+            if (msBanner) msBanner.remove()
         })
+        try {
+            const rejectBtn = $('button=Reject')
+            await rejectBtn.waitForDisplayed({ timeout: 2000 })
+            await rejectBtn.click()
+        } catch {
+            // no cookie banner present
+        }
     }
 
     get hamburgerBtn() {
@@ -15,7 +22,9 @@ export default class BaseMobilePage {
     }
 
     async openMenu() {
+        await this.dismissCookieBanner()
         await this.hamburgerBtn.waitForClickable({ timeout: 10000 })
         await this.hamburgerBtn.click()
+        await $('button.js-header-menu-toggle[aria-expanded="true"]').waitForExist({ timeout: 10000 })
     }
 }
