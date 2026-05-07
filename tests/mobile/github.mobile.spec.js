@@ -1,9 +1,13 @@
 import SignupPage from '../../pages/mobile/signup.mobile.page.js'
-import LoginPage  from '../../pages/mobile/login.mobile.page.js'
-import MainPage   from '../../pages/mobile/main.mobile.page.js'
+import LoginPage from '../../pages/mobile/login.mobile.page.js'
+import MainPage from '../../pages/mobile/main.mobile.page.js'
 import { testData } from '../../fixtures/testData.js'
 
 describe('Mobile Navigation on GitHub.com', () => {
+
+    beforeEach(async () => {
+        await browser.deleteAllCookies()
+    })
 
     it('should sign up on github.com @mobile', async () => {
         await browser.url('/')
@@ -16,8 +20,8 @@ describe('Mobile Navigation on GitHub.com', () => {
         await SignupPage.fillEmail(testData.signUp.email)
         await SignupPage.fillPassword(testData.signUp.password)
         await SignupPage.fillUsername(testData.signUp.username)
-        await SignupPage.chooseCountry(testData.signUp.country)
         await SignupPage.clickEmailCheckbox()
+        await SignupPage.chooseCountry(testData.signUp.country)
 
         const createBtn = SignupPage.createAccountBtn
         await createBtn.waitForEnabled({ timeout: 10000 })

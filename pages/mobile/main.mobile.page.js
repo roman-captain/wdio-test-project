@@ -12,7 +12,7 @@ class MainMobilePage extends BaseMobilePage {
     get finalSubscribeBtn()   { return $('[data-analytics-event*="form_submit"]') }
 
     // Search locators
-    get searchButton()        { return $('button[aria-label="Search or jump to…"]') }
+    get searchButton()        { return $('button.header-search-button') }
     get searchInput()         { return $('#query-builder-test') }
     get firstArtLink()        { return $('*=art') }
 
