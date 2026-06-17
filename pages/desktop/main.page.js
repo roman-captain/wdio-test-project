@@ -4,11 +4,11 @@ class MainPage extends BasePage {
 
     // Subscribe locators
 
-    get subscribeBtn()       { return $('a[href="https://github.com/newsletter"]') }
+    get subscribeBtn()       { return $('section[aria-labelledby="subscribe-to-newsletter"] a[href="/newsletter"]') }
     get subscribeHeadTitle() { return $('h1=Get our developer newsletter') }
     get emailField()         { return $('#form-field-emailAddress') }
     get countrySelect()      { return $('#form-field-country') }
-    get privacyCheckbox()    { return $('[viewBox="0 0 100 100"]') }
+    get privacyCheckbox()    { return $('[name="marketing_email_opt_in"]') }
     get successTitle()       { return $('#hero-section-brand-heading') }
     get finalSubscribeBtn()  { return $('[data-analytics-event*="form_submit"]') }
 
@@ -36,8 +36,8 @@ class MainPage extends BasePage {
 
     async clickPrivacyCheckbox() {
         await this.dismissCookieBanner()
-        await this.privacyCheckbox.waitForClickable({ timeout: 10000 })
-        await this.privacyCheckbox.click()
+        await this.privacyCheckbox.waitForExist({ timeout: 10000 })
+        await browser.execute(el => el.click(), await this.privacyCheckbox)
     }
 
     async clickFinalSubscribeBtn() {
