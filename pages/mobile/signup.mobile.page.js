@@ -10,7 +10,8 @@ class SignupMobilePage extends BaseMobilePage {
     get countryDropdown()  { return $('#country-dropdown-panel-button') }
     get countryFilter()    { return $('#country-dropdown-panel-filter') }
     get emailCheckbox() { return $('.FormControl-checkbox') }
-    get createAccountBtn() { return $('button[data-target="signup-form.SignupButton"]') }
+    // GitHub redesign (Jul 2026): data-target="signup-form.SignupButton" removed from DOM
+    get createAccountBtn() { return $('button*=Create account') }
 
     async clickSignUpNavButton() {
         await this.openMenu()
