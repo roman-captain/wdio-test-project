@@ -1,10 +1,15 @@
 import { env } from '../config/env.js'
 
+// Unique per run: GitHub signup validates email/username availability
+// and password strength live - static values go stale and keep the
+// "Create account" button disabled (data-disable-invalid)
+const runId = Date.now()
+
 export const testData = {
     signUp: {
-        email:    'example@test.com',
-        password: 'Password12345',
-        username: 'BraddPitt',
+        email:    `qa.rc.${runId}@gmail.com`,
+        password: `Qa-R3silient-${runId}`,
+        username: `qa-rc-${runId}`,
         country:  'Ukraine',
     },
     signIn: {

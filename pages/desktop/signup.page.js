@@ -11,7 +11,8 @@ class SignupPage extends BasePage {
     get usernameField() { return $('#login') }
     get countryDropdown() { return $('#country-dropdown-panel-button') }
     get emailCheckbox() { return $('.FormControl-checkbox') }
-    get createAccountBtn() { return $('button[data-target="signup-form.SignupButton"]') }
+    // GitHub redesign (Jul 2026): data-target="signup-form.SignupButton" removed from DOM
+    get createAccountBtn() { return $('button*=Create account') }
 
     // Signup actions
 
