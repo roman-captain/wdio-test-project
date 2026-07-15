@@ -91,7 +91,7 @@ class MainPage extends BasePage {
 
     // Support / Terms locators
 
-    get serviceTermsButton() { return $('a[href*="/site/terms"]') }
+    get serviceTermsButton() { return $('a[href*="github-terms-of-service"]') }
     get supportLink()        { return $('a[href="https://support.github.com/"]') }
 
     // Support / Terms actions 
