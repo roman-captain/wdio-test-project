@@ -90,17 +90,10 @@ describe('Navigation on GitHub.com', () => {
     it('should find support on github.com @regression', async () => {
         await browser.url('/')
 
-        await SignupPage.clickSignUpNavButton()
-
+        // Route via the home footer instead of the signup page: signup sits
+        // behind Octocaptcha and the challenge page has no Terms link.
+        // The footer link navigates in the same tab.
         await MainPage.clickServiceTerms()
-
-        await browser.waitUntil(
-            async () => (await browser.getWindowHandles()).length > 1,
-            { timeout: 10000, timeoutMsg: 'New tab did not open within 10 seconds' }
-        )
-
-        const handles = await browser.getWindowHandles()
-        await browser.switchToWindow(handles[handles.length - 1])
 
         await expect(browser).toHaveUrl(testData.expectedTexts.termsUrl, { containing: true })
 
