@@ -4,7 +4,7 @@ class SignupPage extends BasePage {
 
     // Signup Locators
 
-    get signUpNavButton() { return $('.HeaderMenu-link--sign-up') }
+    get signUpNavButton() { return $('a[href^="/signup"]') }
     get pageHeader() { return $('h1.signups-rebrand__container-h1') }
     get emailField() { return $('#email') }
     get passwordField() { return $('#password') }
