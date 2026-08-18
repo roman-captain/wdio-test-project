@@ -49,8 +49,8 @@ class MainPage extends BasePage {
 
     // Search locators
 
-    get searchButton() { return $('button.header-search-button') }
-    get searchInput()  { return $('#query-builder-test') }
+    get searchButton() { return $('button[aria-label^="Search or jump to"]') }
+    get searchInput()  { return $('input[aria-label="Search or jump to"]') }
     get firstArtLink() { return $('*=art') }
 
     // Search actions

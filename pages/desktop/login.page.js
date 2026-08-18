@@ -4,7 +4,7 @@ class LoginPage extends BasePage {
 
     // SignIn locators
 
-    get signInNavButton() { return $('.HeaderMenu').$('a[href="/login"]') }
+    get signInNavButton() { return $('a[href="/login"][class*="hiddenBelowLg"]') }
     get pageTitle()       { return $('//h1[normalize-space()="Sign in to GitHub"]') }
     get loginField()      { return $('#login_field') }
     get passwordField()   { return $('#password') }
