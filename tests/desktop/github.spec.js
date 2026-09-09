@@ -90,6 +90,6 @@ describe('Navigation on GitHub.com', () => {
         await MainPage.scrollToSupportLink()
         await MainPage.clickSupportLink()
 
-        await expect(browser).toHaveUrl('support.github.com', { containing: true })
+        await expect(browser).toHaveUrl('help.github.com', { containing: true })
     })
 })
