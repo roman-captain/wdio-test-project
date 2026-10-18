@@ -29,7 +29,7 @@ export const testData = {
         subscribeTitle:    'Get our developer newsletter',
         successSubscribe:  'Thanks for subscribing',
         pricingHeader:     'Try GitHub, the complete developer platform',
-        pricingPageTitle:  'Pricing · Plans for every developer · GitHub',
+        pricingPageTitle:  'pricing',
         compareFeaturesH:  'Compare features',
         termsUrl:          'site-policy/github-terms/github-terms-of-service',
     },

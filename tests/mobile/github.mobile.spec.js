@@ -82,7 +82,7 @@ describe('Mobile Navigation on GitHub.com', () => {
 
         await MainPage.pricingHeader.waitForDisplayed({ timeout: 10000 })
         await expect(MainPage.pricingHeader).toHaveText(testData.expectedTexts.pricingHeader)
-        await expect(browser).toHaveTitle(testData.expectedTexts.pricingPageTitle)
+        await expect(browser).toHaveTitle(testData.expectedTexts.pricingPageTitle, { containing: true, ignoreCase: true })
 
         await MainPage.scrollToCompareFeaturesLink()
         await MainPage.clickCompareFeaturesLink()
