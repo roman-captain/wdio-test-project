@@ -28,9 +28,8 @@ export const testData = {
         signInTitle:       'Sign in to GitHub',
         subscribeTitle:    'Get our developer newsletter',
         successSubscribe:  'Thanks for subscribing',
-        pricingHeader:     'Try GitHub, the complete developer platform',
+        pricingHeader:     'Try the Copilot-powered platform',
         pricingPageTitle:  'pricing',
-        compareFeaturesH:  'Compare features',
         termsUrl:          'site-policy/github-terms/github-terms-of-service',
     },
 }

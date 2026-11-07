@@ -18,9 +18,9 @@ class MainMobilePage extends BaseMobilePage {
 
     // Pricing locators
     get pricingButton()       { return $('a[href="https://github.com/pricing"]') }
-    get pricingHeader()       { return $('h1.h2-mktg') }
-    get compareFeaturesLink() { return $('a[href="#compare-features"]') }
-    get compareFeaturesTitle(){ return $('.js-compare-features-selected') }
+    get pricingHeader()       { return $('main h1') }
+    get compareFeaturesLink() { return $('a[href="#compare-plans"]') }
+    get compareFeaturesTitle(){ return $('#compare-plans') }
 
     // Subscribe actions
 

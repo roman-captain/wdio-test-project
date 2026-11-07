@@ -68,9 +68,9 @@ class MainPage extends BasePage {
     // Pricing locators
 
     get pricingButton()      { return $('span=Pricing') }
-    get pricingHeader()      { return $('h1.h2-mktg') }
-    get compareFeaturesLink(){ return $('a[href="#compare-features"]') }
-    get compareFeaturesTitle(){ return $('h1.h1') }
+    get pricingHeader()      { return $('main h1') }
+    get compareFeaturesLink(){ return $('a[href="#compare-plans"]') }
+    get compareFeaturesTitle(){ return $('#compare-plans') }
 
     // Pricing actions
 

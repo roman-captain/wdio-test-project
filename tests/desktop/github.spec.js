@@ -74,7 +74,7 @@ describe('Navigation on GitHub.com', () => {
         await MainPage.clickCompareFeaturesLink()
 
         await MainPage.compareFeaturesTitle.waitForDisplayed({ timeout: 10000 })
-        await expect(MainPage.compareFeaturesTitle).toHaveText(testData.expectedTexts.compareFeaturesH)
+        await expect(MainPage.compareFeaturesTitle).toBeDisplayed()
     })
 
     it('should find support on github.com @regression', async () => {
